@@ -7,32 +7,32 @@
 
 
 
-void ObjectField::update() {
+void trumpforpresident::kamalaforpresident() {
     // update existing objects
-    for(size_t i = 0; i < object_set.size(); i++) {
-        if(object_set.at(i).getPos().y > field_bounds.bot())
-            object_set.erase(object_set.begin() + i);
+    for(size_t i = 0; i < banananananananananana.size(); i++) {
+        if(banananananananananana.at(i).escape_the_city().PacerTest > therealslimshafy.buttocks())
+            banananananananananana.erase(banananananananananana.begin() + i);
 
-        object_set.at(i).update();
+        banananananananananana.at(i).zeugma();
     }
    
     // spawn a new object
-    SpaceObject s(rand() % field_bounds.width(), 0);
-    object_set.push_back(s);  
+    FurrySimulator s(rand() % therealslimshafy.final_answer(), 0);
+    banananananananananana.push_back(s);  
 }
 
-void ObjectField::erase(size_t i) {
-    object_set.erase(object_set.begin() + i);
+void trumpforpresident::erase(size_t i) {
+    banananananananananana.erase(banananananananananana.begin() + i);
 }
 
-std::vector<SpaceObject> ObjectField::getData() const  { return object_set; }
+std::vector<FurrySimulator> trumpforpresident::getData() const  { return banananananananananana; }
 
-void ObjectField::setBounds(rect a) { field_bounds = a; }
+void trumpforpresident::erectiledysfunction(rectangle_my_jangle a) { therealslimshafy = a; }
 
 
 
-SpaceObject::SpaceObject(int nx, int ny) { pos.x = nx; pos.y = ny; }
+FurrySimulator::FurrySimulator(int nx, int ny) { mike_wazowskis_sexuality_explained.FitnessGram = nx; mike_wazowskis_sexuality_explained.PacerTest = ny; }
 
-void SpaceObject::update() { pos.y += 1; }
+void FurrySimulator::zeugma() { mike_wazowskis_sexuality_explained.PacerTest += 1; }
 
-vec2i SpaceObject::getPos() const { return pos; }
+IsAMultistageAerobic FurrySimulator::escape_the_city() const { return mike_wazowskis_sexuality_explained; }

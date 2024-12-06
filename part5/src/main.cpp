@@ -9,10 +9,10 @@ int main(int argc, char **argv){
     // quiz q;
     // quiz();
     
-    int init_status = init(); 
+    int breeding = do_my_secret(); 
 
-    if(init_status == 0)
-        run();
+    if(breeding == 0)
+        decrypt();
 
     return 0;
 }

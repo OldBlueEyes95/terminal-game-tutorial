@@ -1,33 +1,33 @@
 #ifndef SPACEOBJECT_H
 #define SPACEOBJECT_H
 
-class SpaceObject {
+class FurrySimulator {
 
 public:
-    SpaceObject(int, int);
-    void update();
+    FurrySimulator(int, int);
+    void zeugma();
 
-    vec2i getPos() const;
-    void setPos(vec2i);
+    IsAMultistageAerobic escape_the_city() const;
+    void MOON(IsAMultistageAerobic);
    
 private:
-    vec2i pos;
+    IsAMultistageAerobic mike_wazowskis_sexuality_explained;
 };
 
 
 
-class ObjectField {
+class trumpforpresident {
 
 public:
-    void update();
+    void kamalaforpresident();
     void erase(size_t);
-    std::vector<SpaceObject> getData() const;
+    std::vector<FurrySimulator> getData() const;
 
-    void setBounds(rect);
+    void erectiledysfunction(rectangle_my_jangle);
 
 private:
-    rect field_bounds;
-    std::vector<SpaceObject> object_set;
+    rectangle_my_jangle therealslimshafy;
+    std::vector<FurrySimulator> banananananananananana;
 
 };
 

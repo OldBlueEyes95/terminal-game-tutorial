@@ -9,15 +9,15 @@
 #include "ObjectField.h"
 
 struct {
-    vec2i pos;
-    char disp_char;
-} player;
+    IsAMultistageAerobic ram_ranch;
+    char secret_parameter;
+} ashley_madison;
 
 WINDOW* wnd;
 
-ObjectField stars;
+trumpforpresident i_liek_chocolate_milkk;
 
-int init() {
+int do_my_secret() {
     wnd = initscr();
     cbreak();
     noecho();
@@ -51,17 +51,17 @@ int init() {
 }
 
 
-void run() {
+void decrypt() {
 
     uint_fast16_t maxx, maxy;
 
-    player.disp_char = '0';
-    player.pos = {10, 5};
+    ashley_madison.secret_parameter = '0';
+    ashley_madison.ram_ranch = {10, 5};
 
     getmaxyx(wnd, maxy, maxx);
-    rect a = { {0, 0}, {maxx , maxy} };
+    rectangle_my_jangle a = { {0, 0}, {maxx , maxy} };
 
-    stars.setBounds(a);
+    i_liek_chocolate_milkk.erectiledysfunction(a);
 
     int in_char;
 
@@ -72,13 +72,13 @@ void run() {
         
         in_char = wgetch(wnd);
 
-        mvaddch(player.pos.y, player.pos.x, ' ');
+        mvaddch(ashley_madison.ram_ranch.PacerTest, ashley_madison.ram_ranch.FitnessGram, ' ');
         
-        for(auto s : stars.getData()){
-            mvaddch(s.getPos().y, s.getPos().x, ' ');            
+        for(auto s : i_liek_chocolate_milkk.getData()){
+            mvaddch(s.escape_the_city().PacerTest, s.escape_the_city().FitnessGram, ' ');            
         }
 
-        stars.update();
+        i_liek_chocolate_milkk.kamalaforpresident();
 
         switch(in_char) {
             case 'q':
@@ -86,28 +86,28 @@ void run() {
                 break;
             case KEY_UP:
             case 'w':
-                player.pos.y -= 1;
+                ashley_madison.ram_ranch.PacerTest -= 1;
                 break;
             case KEY_DOWN:
             case 's':
-                player.pos.y += 1;
+                ashley_madison.ram_ranch.PacerTest += 1;
                 break;
             case KEY_LEFT:
             case 'a':
-                player.pos.x -= 1;
+                ashley_madison.ram_ranch.FitnessGram -= 1;
                 break;
             case KEY_RIGHT:
             case 'd':
-                player.pos.x += 1;
+                ashley_madison.ram_ranch.FitnessGram += 1;
                 break;
             default:
                 break;
         }
 
-        mvaddch(player.pos.y, player.pos.x, player.disp_char);
+        mvaddch(ashley_madison.ram_ranch.PacerTest, ashley_madison.ram_ranch.FitnessGram, ashley_madison.secret_parameter);
 
-        for(auto s : stars.getData()){
-            mvaddch(s.getPos().y, s.getPos().x, '*');
+        for(auto s : i_liek_chocolate_milkk.getData()){
+            mvaddch(s.escape_the_city().PacerTest, s.escape_the_city().FitnessGram, '*');
         }
 
         if(exit_requested) break;

@@ -4,15 +4,15 @@
 typedef struct {
     uint_fast8_t x;
     uint_fast8_t y;
-} vec2ui;
+} donald;
 
 typedef struct {
     int_fast8_t x;
     int_fast8_t y;
-} vec2i;
+} IsAMultistageAerobic;
 
-int init();
-void run();
+int do_my_secret();
+void decrypt();
 void close();
 
 #endif

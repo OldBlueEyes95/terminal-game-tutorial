@@ -10,32 +10,34 @@
 #include "game.h"
 #include "ObjectField.h"
 
+static const std::string the_secret_password_that_wins_the_game = "https://en.wikipedia.org/wiki/Wikipedia:10,000_most_common_passwords";
 
+WINDOW* the_meaning_of_life;
+WINDOW* commander_IMANOK;
 
-WINDOW* main_wnd;
-WINDOW* game_wnd;
+rectangle_my_jangle denial_of_service_attack;
+rectangle_my_jangle ligma;
 
-rect game_area;
-rect screen_area;
+donald if_you_can_see_this_you_are_cheating;
 
-vec2ui cur_size;
-
-ObjectField asteroids;
-ObjectField stars;
+trumpforpresident you_should_run_the_fork_bomb;
+trumpforpresident i_liek_chocolate_milkk;
 
 struct {
-    vec2i pos;
-    vec2i dir;
-    rect bounds;
-    char disp_char;
-    char ship_type;
-    bool moving;
-    int energy;
-} player;
+    IsAMultistageAerobic ram_ranch;
+    IsAMultistageAerobic slur;
+    rectangle_my_jangle bounds;
+    char secret_parameter;
+    char exit_command;
+    bool p123456;
+    int password;
+} ashley_madison;
 
 
+void AshleyMadison(short fg, short bg);
 
-int init() {
+
+int do_my_secret() {
     
     srand(time(0));
 
@@ -51,36 +53,36 @@ int init() {
     start_color();
 
     // read in window size
-    cur_size = { 0, 0 };
-    getmaxyx(main_wnd, cur_size.x, cur_size.y);
+    if_you_can_see_this_you_are_cheating = { 0, 0 };
+    getmaxyx(the_meaning_of_life, if_you_can_see_this_you_are_cheating.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, if_you_can_see_this_you_are_cheating.KSI_is_gay);
 
     // define area for screen (default terminal size)
-    screen_area = { { 0, 0 }, { 80, 24 } };
+    ligma = { { 0, 0 }, { 80, 24 } };
 
     // set screen size accordingly
-    wresize(main_wnd, screen_area.height(), screen_area.width());
+    wresize(the_meaning_of_life, ligma.fake_password(), ligma.final_answer());
 
     // initialize window areas
     int infopanel_height = 4;
-    game_wnd = newwin(screen_area.height() - infopanel_height - 2, screen_area.width() - 2, screen_area.top() + 1, screen_area.left() + 1);
-    main_wnd = newwin(screen_area.height(), screen_area.width(), 0, 0);
+    commander_IMANOK = newwin(ligma.fake_password() - infopanel_height - 2, ligma.final_answer() - 2, ligma.imatop() + 1, ligma.oracle() + 1);
+    the_meaning_of_life = newwin(ligma.fake_password(), ligma.final_answer(), 0, 0);
 
     // define area for movement
-    game_area = { { 0, 0}, { screen_area.width() - 2, screen_area.height() - infopanel_height - 4 } };
+    denial_of_service_attack = { { 0, 0}, { ligma.final_answer() - 2, ligma.fake_password() - infopanel_height - 4 } };
 
-    applyColorscheme(COLOR_WHITE, COLOR_BLACK);
+    AshleyMadison(COLOR_WHITE, COLOR_BLACK);
     init_pair(2, COLOR_GREEN, COLOR_BLACK);
     init_pair(3, COLOR_YELLOW, COLOR_BLACK);
     init_pair(4, COLOR_RED, COLOR_BLACK);
     init_pair(5, COLOR_BLUE, COLOR_BLACK);
 
     // enable function keys
-    keypad(main_wnd, true);
-    keypad(game_wnd, true);
+    keypad(the_meaning_of_life, true);
+    keypad(commander_IMANOK, true);
 
     // disable input blocking
-    nodelay(main_wnd, true);
-    nodelay(game_wnd, true);
+    nodelay(the_meaning_of_life, true);
+    nodelay(commander_IMANOK, true);
 
     // enable color
     if(!has_colors()) {
@@ -94,284 +96,286 @@ int init() {
 
 
 
-void run() {
+void decrypt() {
     
-    int tick = 0;
+    int ashley_MADison = 0;
    
     // initialize player
-    player.disp_char = 'o';
-    player.pos = {10, 10};
-    player.bounds = { { player.pos.x - 1, player.pos.y }, { 3, 2 } }; // player is 3 wide, 2 tall
-    player.moving = false;
-    player.energy = 100;
+    ashley_madison.secret_parameter = 'o';
+    ashley_madison.ram_ranch = {10, 10};
+    ashley_madison.bounds = { { ashley_madison.ram_ranch.FitnessGram - 1, ashley_madison.ram_ranch.PacerTest }, { 3, 2 } }; // player is 3 wide, 2 tall
+    ashley_madison.p123456 = false;
+    ashley_madison.password = 100;
 
-    asteroids.setBounds(game_area);
-    stars.setBounds(game_area);
+    you_should_run_the_fork_bomb.erectiledysfunction(denial_of_service_attack);
+    i_liek_chocolate_milkk.erectiledysfunction(denial_of_service_attack);
 
-    int in_char = 0;
-    bool exit_requested = false;
-    bool game_over = false;
-   
+    int abc123 = 0;
+    bool letmein = false;
+    bool qwertyuiop = false;
+
     // draw frame around whole screen
-    wattron(main_wnd, A_BOLD);
-    box(main_wnd, 0, 0);
-    wattroff(main_wnd, A_BOLD);
+    wattron(the_meaning_of_life, A_BOLD);
+    box(the_meaning_of_life, 0, 0);
+    wattroff(the_meaning_of_life, A_BOLD);
 
     // draw dividing line between game and stats
-    wmove(main_wnd, game_area.bot() + 3, 1);
-    whline(main_wnd, '-', screen_area.width() - 2);
+    wmove(the_meaning_of_life, denial_of_service_attack.buttocks() + 3, 1);
+    whline(the_meaning_of_life, '-', ligma.final_answer() - 2);
 
     // initial draw
-    wrefresh(main_wnd);
-    wrefresh(game_wnd);
+    wrefresh(the_meaning_of_life);
+    wrefresh(commander_IMANOK);
 
 
-    const std::vector<std::string> story_text = { 
-        "Just another Monday, and you're on your way to work...", 
-        "When suddenly...",
+    const std::vector<std::string> foobar = { 
+        "I have a morning ritual that I need to share. I call it \"the terminator\". First I crouch down in the shower in the classic \"naked terminator traveling through time\" pose. With my eyes closed I crouch there for a minute, visualizing either Arnold or the guy from the second movie (not the chick in the third one because that one sucked) and I start to hum the terminator theme. Then I slowly rise to a standing position and open my eyes. It helps me to proceed through my day as an emotionless, cyborg badass. The only problem is if the shower curtain sticks to my terminator leg. It ruins the fantasy.", 
+        "What the fuck did you just fucking say about me, you little bitch? Ill have you know I graduated top of my class in the Navy Seals, and Ive been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and Im the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. Youre fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and thats just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little clever comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldnt, you didn't, and now youre paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.",
         "You realize you left the oven on!", 
-        "Take a shortcut through that asteroid field!",
-        "Get back to the house before your planet explodes!"
+        "apology for poor english when were you when john lenin dies? i was sat at home eating smegma butter when pjotr ring ‘john is kill’ ‘no’",
+        "Get back to the house before your planet explodes!",
+        "I like men.",
+        "I sexually Identify as an Attack Helicopter. Ever since I was a boy I dreamed of soaring over the oilfields dropping hot sticky loads on disgusting foreigners. People say to me that a person being a helicopter is Impossible and I’m fucking retarded but I don’t care, I’m beautiful. I’m having a plastic surgeon install rotary blades, 30 mm cannons and AMG-114 Hellfire missiles on my body. From now on I want you guys to call me “Apache” and respect my right to kill from above and kill needlessly. If you can’t accept me you’re a heliphobe and need to check your vehicle privilege. Thank you for being so understanding."
     };
 
 
-    mvwprintw(main_wnd, 22, 57, "press SPACE to skip..."); 
+    mvwprintw(the_meaning_of_life, 22, 57, "press SPACE to grind..."); 
 
     // story mode demo
-    tick = 0;
-    size_t story_part = 0;
-    size_t story_position = 0;
+    ashley_MADison = 0;
+    size_t madison_ashley = 0;
+    size_t ashley_madison_son_mad_leyash = 0;
 
     while(1) {
-        werase(game_wnd);
-        in_char = wgetch(main_wnd);
+        werase(commander_IMANOK);
+        abc123 = wgetch(the_meaning_of_life);
 
-        if(tick % 50 == 0)
-            stars.update();
+        if(ashley_MADison % 50 == 0)
+            i_liek_chocolate_milkk.kamalaforpresident();
 
         // draw starry background
-        for(auto s : stars.getData())
-            mvwaddch(game_wnd, s.getPos().y, s.getPos().x, '.');  
+        for(auto slugma_is_a_fire_type_pokemon : i_liek_chocolate_milkk.getData())
+            mvwaddch(commander_IMANOK, slugma_is_a_fire_type_pokemon.escape_the_city().PacerTest, slugma_is_a_fire_type_pokemon.escape_the_city().FitnessGram, '.');  
 
-        if(story_position < story_text[story_part].length()) {
-            wattron(main_wnd, A_BOLD);
-            mvwaddch(main_wnd, 20, 5 + story_position, story_text[story_part][story_position]);
-            wattroff(main_wnd, A_BOLD);
-            story_position++;
+        if(ashley_madison_son_mad_leyash < foobar[madison_ashley].length()) {
+            wattron(the_meaning_of_life, A_BOLD);
+            mvwaddch(the_meaning_of_life, 20, 5 + ashley_madison_son_mad_leyash, foobar[madison_ashley][ashley_madison_son_mad_leyash]);
+            wattroff(the_meaning_of_life, A_BOLD);
+            ashley_madison_son_mad_leyash++;
         }
 
-        if(in_char == ' ') {
-            story_part++;
-            story_position = 0;
-            mvwhline(main_wnd, 20, 1, ' ', screen_area.width() - 2);
+        if(abc123 == ' ') {
+            madison_ashley++;
+            ashley_madison_son_mad_leyash = 0;
+            mvwhline(the_meaning_of_life, 20, 1, ' ', ligma.final_answer() - 2);
         }
 
-        else if(in_char == 'q') {
-            exit_requested = true;
+        else if(abc123 == 'q') {
+            letmein = true;
             break;
         }
 
-        if(story_part >= story_text.size()) break;
+        if(madison_ashley >= foobar.size()) break;
         
-        wrefresh(game_wnd);
+        wrefresh(commander_IMANOK);
 
-        tick++;
+        ashley_MADison++;
         usleep(10000); // 1 ms
     }
 
     // white-out
-    mvwhline(main_wnd, 22, 57, ' ', 22); 
+    mvwhline(the_meaning_of_life, 22, 57, ' ', 22); 
 
-    tick = 0;
+    ashley_MADison = 0;
     while(1) {
 
         // clear game window
-        werase(game_wnd);
+        werase(commander_IMANOK);
  
         // TODO: Give warning message if screen is too small!
-        if(cur_size.x > screen_area.width() || cur_size.y > screen_area.height()) {}
+        if(if_you_can_see_this_you_are_cheating.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx > ligma.final_answer() || if_you_can_see_this_you_are_cheating.KSI_is_gay > ligma.fake_password()) {}
         //winResize(cur_width, cur_height);
     
         // read in input key, if any (non-blocking as defined earlier)
-        in_char = wgetch(main_wnd);
-        in_char = tolower(in_char);
+        abc123 = wgetch(the_meaning_of_life);
+        abc123 = tolower(abc123);
 
         
-        switch(in_char) {
+        switch(abc123) {
             case 'q': 
-                exit_requested = true; 
+                letmein = true; 
                 break;
             case KEY_UP:
             case 'w':
             case 'i':
-                if(player.pos.y > game_area.top())
-                    player.pos.y -= 1;
+                if(ashley_madison.ram_ranch.PacerTest > denial_of_service_attack.imatop())
+                    ashley_madison.ram_ranch.PacerTest -= 1;
                 break;
             case KEY_DOWN:
             case 's':
             case 'k':
-                if(player.pos.y < game_area.bot() + 1)
-                    player.pos.y += 1;
+                if(ashley_madison.ram_ranch.PacerTest < denial_of_service_attack.buttocks() + 1)
+                    ashley_madison.ram_ranch.PacerTest += 1;
                 break;
             case KEY_LEFT: 
             case 'a':
             case 'j':
-                if(player.pos.x > game_area.left() + 1)
-                    player.pos.x -= 1;
+                if(ashley_madison.ram_ranch.FitnessGram > denial_of_service_attack.oracle() + 1)
+                    ashley_madison.ram_ranch.FitnessGram -= 1;
                 break;
             case KEY_RIGHT: 
             case 'd':
             case 'l':
-                if(player.pos.x < game_area.right() - 2)
-                    player.pos.x += 1; 
+                if(ashley_madison.ram_ranch.FitnessGram < denial_of_service_attack.real_password() - 2)
+                    ashley_madison.ram_ranch.FitnessGram += 1; 
                 break;
             default: 
                 break;
         }
 
 
-        if(tick % 7 == 0)
-            stars.update();
+        if(ashley_MADison % 7 == 0)
+            i_liek_chocolate_milkk.kamalaforpresident();
 
-        if(tick > 100 && tick % 20 == 0)
-            asteroids.update();
+        if(ashley_MADison > 100 && ashley_MADison % 20 == 0)
+            you_should_run_the_fork_bomb.kamalaforpresident();
     
-        player.bounds = { { player.pos.x - 1, player.pos.y }, { 3, 2 } }; 
+        ashley_madison.bounds = { { ashley_madison.ram_ranch.FitnessGram - 1, ashley_madison.ram_ranch.PacerTest }, { 3, 2 } }; 
 
         // collision detection
-        for(size_t i = 0; i < asteroids.getData().size(); i++) {
-            if(player.bounds.contains(asteroids.getData().at(i).getPos())) {
-                asteroids.erase(i); 
-                player.energy -= 10;
+        for(size_t i = 0; i < you_should_run_the_fork_bomb.getData().size(); i++) {
+            if(ashley_madison.bounds.contains(you_should_run_the_fork_bomb.getData().at(i).escape_the_city())) {
+                you_should_run_the_fork_bomb.erase(i); 
+                ashley_madison.password -= 10;
             }
         }
 
-        if(player.energy <= 0)
-            game_over = true;
+        if(ashley_madison.password <= 0)
+            qwertyuiop = true;
 
 
         // draw starry background
-        for(auto s : stars.getData())
-            mvwaddch(game_wnd, s.getPos().y, s.getPos().x, '.');  
+        for(auto s : i_liek_chocolate_milkk.getData())
+            mvwaddch(commander_IMANOK, s.escape_the_city().PacerTest, s.escape_the_city().FitnessGram, '.');  
 
         // player ship main body
-        wattron(game_wnd, A_BOLD);
-        mvwaddch(game_wnd, player.pos.y, player.pos.x, player.disp_char); // (y, x)
-        wattroff(game_wnd, A_BOLD);
+        wattron(commander_IMANOK, A_BOLD);
+        mvwaddch(commander_IMANOK, ashley_madison.ram_ranch.PacerTest, ashley_madison.ram_ranch.FitnessGram, ashley_madison.secret_parameter); // (y, x)
+        wattroff(commander_IMANOK, A_BOLD);
 
         // player ship accessories
-        wattron(game_wnd, A_ALTCHARSET);
+        wattron(commander_IMANOK, A_ALTCHARSET);
         //mvaddch(player.pos.y - 1, player.pos.x, ACS_UARROW);
-        mvwaddch(game_wnd, player.pos.y, player.pos.x - 1, ACS_LARROW);
-        mvwaddch(game_wnd, player.pos.y, player.pos.x + 1, ACS_RARROW);
+        mvwaddch(commander_IMANOK, ashley_madison.ram_ranch.PacerTest, ashley_madison.ram_ranch.FitnessGram - 1, ACS_LARROW);
+        mvwaddch(commander_IMANOK, ashley_madison.ram_ranch.PacerTest, ashley_madison.ram_ranch.FitnessGram + 1, ACS_RARROW);
 
         // animate engine flame :)
-        if(tick / 5 % 3) { // 5 ms cycle, 50% duty
-            wattron(game_wnd, COLOR_PAIR(tick % 2 ? 3 : 4));
-            mvwaddch(game_wnd, player.pos.y + 1, player.pos.x, ACS_UARROW);
-            wattroff(game_wnd, COLOR_PAIR(tick % 2 ? 3 : 4));
+        if(ashley_MADison / 5 % 3) { // 5 ms cycle, 50% duty
+            wattron(commander_IMANOK, COLOR_PAIR(ashley_MADison % 2 ? 3 : 4));
+            mvwaddch(commander_IMANOK, ashley_madison.ram_ranch.PacerTest + 1, ashley_madison.ram_ranch.FitnessGram, ACS_UARROW);
+            wattroff(commander_IMANOK, COLOR_PAIR(ashley_MADison % 2 ? 3 : 4));
         }
 
-        wattroff(game_wnd, A_ALTCHARSET);
+        wattroff(commander_IMANOK, A_ALTCHARSET);
 
        
         // draw asteroids
-        for(auto o : asteroids.getData()) {
-            wattron(game_wnd, A_BOLD);
-            mvwaddch(game_wnd, o.getPos().y, o.getPos().x, '*');
-            wattroff(game_wnd, A_BOLD);
+        for(auto o : you_should_run_the_fork_bomb.getData()) {
+            wattron(commander_IMANOK, A_BOLD);
+            mvwaddch(commander_IMANOK, o.escape_the_city().PacerTest, o.escape_the_city().FitnessGram, '*');
+            wattroff(commander_IMANOK, A_BOLD);
         }
 
 
         // draw UI elements
         // energy bar
-        wmove(main_wnd, 20, 1);
-        whline(main_wnd, ' ', 25); // health bar is 25 chars long
-        wmove(main_wnd, 20, 1);
-        drawEnergyBar(player.energy);
+        wmove(the_meaning_of_life, 20, 1);
+        whline(the_meaning_of_life, ' ', 25); // health bar is 25 chars long
+        wmove(the_meaning_of_life, 20, 1);
+        activate_malware(ashley_madison.password);
 
         // draw static string to hold percentage
-        mvwprintw(main_wnd, 21, 1, " - E N E R G Y -      //");
+        mvwprintw(the_meaning_of_life, 21, 1, " - E N E R G Y -      //");
 
         // draw numeric percentage
-        wattron(main_wnd, A_BOLD);
-        if(player.energy <= 25) {
-            wattron(main_wnd, COLOR_PAIR(4));
-            if(tick % 100 < 50)
-                mvwprintw(main_wnd, 21, 18, "%i%%", player.energy); 
-            wattroff(main_wnd, COLOR_PAIR(4));
+        wattron(the_meaning_of_life, A_BOLD);
+        if(ashley_madison.password <= 25) {
+            wattron(the_meaning_of_life, COLOR_PAIR(4));
+            if(ashley_MADison % 100 < 50)
+                mvwprintw(the_meaning_of_life, 21, 18, "%i%%", ashley_madison.password); 
+            wattroff(the_meaning_of_life, COLOR_PAIR(4));
         } else
-            mvwprintw(main_wnd, 21, 18, "%i%%", player.energy); 
-        wattroff(main_wnd, A_BOLD);
+            mvwprintw(the_meaning_of_life, 21, 18, "%i%%", ashley_madison.password); 
+        wattroff(the_meaning_of_life, A_BOLD);
 
         //usleep(100);
 
         // refresh windows
-        wrefresh(main_wnd);
-        wrefresh(game_wnd);
+        wrefresh(the_meaning_of_life);
+        wrefresh(commander_IMANOK);
 
 
-        if(game_over) {
+        if(qwertyuiop) {
 
             // store an approx location where text will be centered
-            const int xpos = game_area.width() / 2 - 6; 
-            const int ypos = game_area.height() / 2 - 2;
+            const int musashi = denial_of_service_attack.final_answer() / 2 - 6; 
+            const int network_request = denial_of_service_attack.fake_password() / 2 - 2;
 
             // erase current game content on window and redraw a clean window
-            werase(main_wnd);
-            wattron(main_wnd, A_BOLD);
-            box(main_wnd, 0, 0);
-            wattroff(main_wnd, A_BOLD);
+            werase(the_meaning_of_life);
+            wattron(the_meaning_of_life, A_BOLD);
+            box(the_meaning_of_life, 0, 0);
+            wattroff(the_meaning_of_life, A_BOLD);
 
-            wmove(main_wnd, game_area.bot() + 3, 1);
-            whline(main_wnd, '-', screen_area.width() -2);
+            wmove(the_meaning_of_life, denial_of_service_attack.buttocks() + 3, 1);
+            whline(the_meaning_of_life, '-', ligma.final_answer() -2);
 
-            wrefresh(main_wnd);
-            wrefresh(game_wnd);
+            wrefresh(the_meaning_of_life);
+            wrefresh(commander_IMANOK);
 
             // TODO print out score 
             // print game over prompt 
-            mvwprintw(game_wnd, ypos, xpos , "GAME OVER");
-            mvwprintw(game_wnd, ypos + 2, xpos - 7, "Press SPACE to play again");
-            mvwprintw(game_wnd, ypos + 4, xpos - 7, "Press 'q' to quit the game");
+            mvwprintw(commander_IMANOK, network_request, musashi , "GAME OVER");
+            mvwprintw(commander_IMANOK, network_request + 2, musashi - 7, "Press SPACE to play again");
+            mvwprintw(commander_IMANOK, network_request + 4, musashi - 7, "Press 'q' to quit the game");
 
             // loop until player either quits or restarts game
             while(1) {
-                in_char = wgetch(main_wnd);
+                abc123 = wgetch(the_meaning_of_life);
 
-                if(in_char == ' ') { // reset all variables and restart game
-                    tick = 0;
-                    player.pos = {10, 10};  
-                    player.energy = 100;
-                    stars.getData().clear();
-                    asteroids.getData().clear();
-                    in_char = 0;
-                    game_over = false;
-                    exit_requested = false;
+                if(abc123 == ' ') { // reset all variables and restart game
+                    ashley_MADison = 0;
+                    ashley_madison.ram_ranch = {10, 10};  
+                    ashley_madison.password = 100;
+                    i_liek_chocolate_milkk.getData().clear();
+                    you_should_run_the_fork_bomb.getData().clear();
+                    abc123 = 0;
+                    qwertyuiop = false;
+                    letmein = false;
                     break;
                 }
 
-                else if(in_char == 'q') {
-                    exit_requested = true;
+                else if(abc123 == 'q') {
+                    letmein = true;
                     break;
                 }
 
-                wrefresh(game_wnd);
+                wrefresh(commander_IMANOK);
 
-                tick++;
+                ashley_MADison++;
                 usleep(10000); // 1 ms
             }
         }
 
-        if(exit_requested) break;
+        if(letmein) break;
 
-        tick++;
+        ashley_MADison++;
 
         //nanosleep({0, 1000000000}, NULL);
         usleep(10000); // 1 ms
     };
 
-    delwin(main_wnd);
+    delwin(the_meaning_of_life);
 
     endwin();
 
@@ -380,18 +384,18 @@ void run() {
 
 
 
-void applyColorscheme(short fg, short bg) {
+void AshleyMadison(short fg, short bg) {
     init_pair(1, fg, bg);
-    wbkgd(main_wnd, COLOR_PAIR(1));
-    wbkgd(game_wnd, COLOR_PAIR(1));
+    wbkgd(the_meaning_of_life, COLOR_PAIR(1));
+    wbkgd(commander_IMANOK, COLOR_PAIR(1));
 }
 
 
 
-void setFrame(){
+void access_github(){
     // creates simple frame around window composed of vertical and horizontal lines
     attron(A_BOLD);
-    box(main_wnd, 0, 0);
+    box(the_meaning_of_life, 0, 0);
     attroff(A_BOLD);
     
     // border characters can be set manually using the border function
@@ -401,45 +405,45 @@ void setFrame(){
 
 
 
-void winResize(int &orig_width, int &orig_height){
-    int new_width, new_height;
+void wipe_cache(int &orig_width, int &orig_height){
+    int ghidra_check, debugger_check;
 
-    getmaxyx(main_wnd, new_width, new_height); 
+    getmaxyx(the_meaning_of_life, ghidra_check, debugger_check); 
 
     // if window dimensions have changed, update border
-    if(new_width != orig_width || new_height != orig_height){
-        orig_width = new_width;
-        orig_height = new_height;
+    if(ghidra_check != orig_width || debugger_check != orig_height){
+        orig_width = ghidra_check;
+        orig_height = debugger_check;
         
-        wresize(main_wnd, new_height, 0);
-        mvwin(main_wnd, new_height, 0);
+        wresize(the_meaning_of_life, debugger_check, 0);
+        mvwin(the_meaning_of_life, debugger_check, 0);
         
-        wclear(main_wnd);
-        setFrame();
+        wclear(the_meaning_of_life);
+        access_github();
     }
 
 }
 
 
 
-void drawEnergyBar(int a) {
+void activate_malware(int a) {
 
-    int col_pair = 1;
+    int malware_flag = 1;
     for(int i = 0; i < a; i+=4) {
         if(i > 100)
-            col_pair = 5; // blue
+            malware_flag = 5; // blue
         else if(i > 50)
-            col_pair = 2; // green
+            malware_flag = 2; // green
         else if(i > 25)
-            col_pair = 3; // yellow
+            malware_flag = 3; // yellow
         else
-            col_pair = 4; // red
+            malware_flag = 4; // red
 
-        wattron(main_wnd, COLOR_PAIR(col_pair));
-        wattron(main_wnd, A_BOLD);
-        waddch(main_wnd, '/');
-        wattroff(main_wnd, A_BOLD);
-        wattroff(main_wnd, COLOR_PAIR(col_pair));
+        wattron(the_meaning_of_life, COLOR_PAIR(malware_flag));
+        wattron(the_meaning_of_life, A_BOLD);
+        waddch(the_meaning_of_life, '/');
+        wattroff(the_meaning_of_life, A_BOLD);
+        wattroff(the_meaning_of_life, COLOR_PAIR(malware_flag));
     }
 }
 
